@@ -1,16 +1,16 @@
 package config;
 
+import aop.Minstrel;
 import knights.BraveKnight;
 import knights.Knight;
 import knights.Quest;
 import knights.SlayDragonQuest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
-/**
- * Created by cda5732 on 18/03/2015.
- */
 @Configuration
+@EnableAspectJAutoProxy
 public class KnightConfig {
     @Bean
     public Knight knight() {
@@ -20,5 +20,10 @@ public class KnightConfig {
     @Bean
     public Quest quest() {
         return new SlayDragonQuest(System.out);
+    }
+
+    @Bean
+    public Minstrel minstrel() {
+        return new Minstrel(System.out);
     }
 }
