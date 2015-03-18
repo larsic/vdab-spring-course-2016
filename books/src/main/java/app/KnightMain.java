@@ -1,16 +1,14 @@
 package app;
 
 import config.KnightConfig;
-import knights.BraveKnight;
 import knights.Knight;
-import knights.Quest;
-import knights.SlayDragonQuest;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.Bean;
 
 /**
+ * KnightMain application using Spring Boot.
+ * Serves as a starter for examples.
  * Created by cda5732 on 18/03/2015.
  */
 @SpringBootApplication
