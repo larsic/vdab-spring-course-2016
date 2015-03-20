@@ -1,26 +1,15 @@
 package com.realdolmen.spring.aspects;
 
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Aspect;
-import org.springframework.stereotype.Component;
-
-@Aspect
-@Component
+// TODO 2: Turn this class into a Spring Bean and an Aspect
 public class BookKeeping {
-    private int happyVisitorCount;
-    private int unhappyVisitorCount;
-
-    @AfterReturning(value = "execution(boolean *..Zoo.accept(..))", returning = "satisfied")
-    public void trackVisitors(boolean satisfied) {
-        System.out.println("Counting visitor.");
-        if(satisfied) happyVisitorCount++; else unhappyVisitorCount++;
-    }
+    // TODO 3: Add an advice that advises the Zoo.accept(Visitor) method
+    // TODO 4: Make sure the advice uses the return value of the the adviced method to keep track of happy and unhappy visitors
 
     public int getHappyVisitorCount() {
-        return happyVisitorCount;
+        return 0;
     }
 
     public int getUnhappyVisitorCount() {
-        return unhappyVisitorCount;
+        return 0;
     }
 }

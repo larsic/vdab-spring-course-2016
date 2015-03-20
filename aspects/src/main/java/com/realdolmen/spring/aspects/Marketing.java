@@ -2,25 +2,21 @@ package com.realdolmen.spring.aspects;
 
 import com.realdolmen.spring.domain.Animal;
 import com.realdolmen.spring.domain.Zoo;
-import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.springframework.stereotype.Component;
 
 import java.util.Objects;
 
-@Aspect
-@Component
+// TODO 1: Marketing must become a Spring AOP Aspect
 public class Marketing {
     private boolean campaignLaunched = false;
 
-    @Before("execution(* addAnimal(..)) && args(animal)")
-    public void marketingCampaignLauncher(JoinPoint joinPoint, Animal animal) {
-        Zoo zoo = (Zoo) joinPoint.getTarget();
-        launchCampaign(zoo, animal);
-        campaignLaunched = true;
-    }
+    // TODO 2: Add an advice that advices the zoo before new animals are added.
+    // TODO 3: Make sure our advice launches the marketing campaign "launchCampaign(Zoo, Animal)". Figure out how to pass the relevant Zoo and Animal parameters.
 
+    /**
+     * Launches a new marketing campaign.
+     * @param zoo The zoo to launch a campaign for.
+     * @param animal The newly arrived animal.
+     */
     void launchCampaign(Zoo zoo, Animal animal) {
         Objects.requireNonNull(zoo, () -> "Don't know which zoo to launch an advertisement campaign for.");
         Objects.requireNonNull(animal, () -> "Don't know which animal to launch an advertisement campaign for.");
@@ -52,6 +48,7 @@ public class Marketing {
         System.out.println("****************************************************************");
         System.out.println("                          (dramatization; may not have happened)");
         System.out.println();
+        campaignLaunched = true;
     }
 
     public boolean isCampaignLaunched() {

@@ -1,44 +1,41 @@
 package com.realdolmen.spring.aspects;
 
-import com.realdolmen.spring.domain.EscapedAnimalException;
 import com.realdolmen.spring.domain.Animal;
-import com.realdolmen.spring.domain.Chimp;
-import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.springframework.stereotype.Component;
 
-@Aspect
-@Component
+import java.util.Objects;
+
+// TODO 1: Turn the security class into a Spring AOP aspect
 public class Security {
-    @Around("execution(* *..Zoo.releaseAnimal(..)) && args(animal)")
-    public Object guardZoo(ProceedingJoinPoint joinPoint, Animal animal) throws Throwable {
-        if(animal instanceof Chimp) {
-            joinPoint.proceed();
-            throw new EscapedAnimalException(animal);
-        } else {
-            System.out.println();
-            System.out.println("***********************************************");
-            System.out.format("Preventing %s '%s' from escaping!%n", animal.type(), animal.getName());
-            System.out.println("***********************************************");
-            System.out.println(
-                "     ||   ||     ||   ||\n" +
-                "     ||   ||, , ,||   ||\n" +
-                "     ||  (||/|/(\\||/  ||\n" +
-                "     ||  ||| _'_`|||  ||\n" +
-                "     ||   || o o ||   ||\n" +
-                "     ||  (||  - `||)  ||\n" +
-                "     ||   ||  =  ||   ||\n" +
-                "     ||   ||\\___/||   ||\n" +
-                "     ||___||) , (||___||\n" +
-                "    /||---||-\\_/-||---||\\\n" +
-                "   / ||--_||_____||_--|| \\\n" +
-                "  (_(||)-| S123-45 |-(||)_)\n" +
-                "|\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"|"
-            );
-            System.out.println("***********************************************");
-            System.out.println();
-            return null;
-        }
+    // TODO 2: Create an advice that is capable of preventing an animal from trying to call zoo.releaseAnimal()
+    // TODO 3: When any animal except Chimps try to escape, prevent it from happening (preventEscapeOf()
+    // TODO 4: When a Chimp escapes, we need to sound the alert by throwing an EscapedAnimalException
+
+    /**
+     * Prevents escaping of an animal.
+     * @param animal The animal to prevent scape of.
+     */
+    private void preventEscapeOf(Animal animal) {
+        Objects.requireNonNull(animal);
+        System.out.println();
+        System.out.println("***********************************************");
+        System.out.format("Preventing %s '%s' from escaping!%n", animal.type(), animal.getName());
+        System.out.println("***********************************************");
+        System.out.println(
+            "     ||   ||     ||   ||\n" +
+            "     ||   ||, , ,||   ||\n" +
+            "     ||  (||/|/(\\||/  ||\n" +
+            "     ||  ||| _'_`|||  ||\n" +
+            "     ||   || o o ||   ||\n" +
+            "     ||  (||  - `||)  ||\n" +
+            "     ||   ||  =  ||   ||\n" +
+            "     ||   ||\\___/||   ||\n" +
+            "     ||___||) , (||___||\n" +
+            "    /||---||-\\_/-||---||\\\n" +
+            "   / ||--_||_____||_--|| \\\n" +
+            "  (_(||)-| S123-45 |-(||)_)\n" +
+            "|\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"|"
+        );
+        System.out.println("***********************************************");
+        System.out.println();
     }
 }
