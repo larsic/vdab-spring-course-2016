@@ -27,7 +27,6 @@
         <module name="aspects (1)" />
         <module name="books (1)" />
         <module name="books (2)" />
-        <module name="boot" />
         <module name="introduction" />
         <module name="samples" />
       </profile>
