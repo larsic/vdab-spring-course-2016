@@ -36,10 +36,8 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/books/pom.xml" />
-        <option value="$PROJECT_DIR$/aspects/pom.xml" />
         <option value="$PROJECT_DIR$/boot/pom.xml" />
         <option value="$PROJECT_DIR$/introduction/pom.xml" />
-        <option value="$PROJECT_DIR$/samples/pom.xml" />
       </list>
     </option>
   </component>
