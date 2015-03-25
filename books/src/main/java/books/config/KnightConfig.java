@@ -1,10 +1,10 @@
-package config;
+package books.config;
 
-import aop.Minstrel;
-import knights.BraveKnight;
-import knights.Knight;
-import knights.Quest;
-import knights.SlayDragonQuest;
+import books.aop.Minstrel;
+import books.knights.BraveKnight;
+import books.knights.Knight;
+import books.knights.Quest;
+import books.knights.SlayDragonQuest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;

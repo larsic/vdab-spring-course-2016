@@ -1,4 +1,4 @@
-package knights;
+package books.knights;
 
 import java.io.PrintStream;
 

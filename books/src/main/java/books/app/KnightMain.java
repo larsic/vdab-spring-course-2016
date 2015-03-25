@@ -1,7 +1,7 @@
-package app;
+package books.app;
 
-import config.KnightConfig;
-import knights.Knight;
+import books.config.KnightConfig;
+import books.knights.Knight;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
