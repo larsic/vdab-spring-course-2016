@@ -23,12 +23,9 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="aspects" />
         <module name="aspects (1)" />
         <module name="books (1)" />
         <module name="books (2)" />
-        <module name="introduction" />
-        <module name="samples" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
