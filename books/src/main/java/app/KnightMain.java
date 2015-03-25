@@ -15,7 +15,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class KnightMain {
 
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = SpringApplication.run(KnightConfig.class, args);
+        ConfigurableApplicationContext context = SpringApplication.run(KnightConfig.class);
         Knight knight = context.getBean(Knight.class);
         knight.embarkOnQuest();
         context.close();
