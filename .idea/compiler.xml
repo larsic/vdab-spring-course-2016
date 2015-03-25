@@ -23,18 +23,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="aspects (1)" />
-        <module name="books (1)" />
-        <module name="books (2)" />
+        <module name="aspects" />
+        <module name="introduction" />
+        <module name="samples" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="aspects" target="1.8" />
-      <module name="aspects (1)" target="1.8" />
-      <module name="books" target="1.8" />
-      <module name="books (1)" target="1.8" />
-      <module name="books (2)" target="1.8" />
-      <module name="boot" target="1.8" />
+      <module name="introduction" target="1.8" />
       <module name="samples" target="1.8" />
     </bytecodeTargetLevel>
   </component>
