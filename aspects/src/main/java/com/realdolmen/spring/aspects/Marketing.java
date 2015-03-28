@@ -5,12 +5,12 @@ import com.realdolmen.spring.domain.Zoo;
 
 import java.util.Objects;
 
-// TODO 1: Marketing must become a Spring AOP Aspect
+// TODO: Marketing must become a Spring AOP Aspect
 public class Marketing {
     private boolean campaignLaunched = false;
 
-    // TODO 2: Add an advice that advices the zoo before new animals are added.
-    // TODO 3: Make sure our advice launches the marketing campaign "launchCampaign(Zoo, Animal)". Figure out how to pass the relevant Zoo and Animal parameters.
+    // TODO: Add an advice that advices the zoo before new animals are added.
+    // TODO: Make sure our advice launches the marketing campaign "launchCampaign(Zoo, Animal)". Figure out how to pass the relevant Zoo and Animal parameters.
 
     /**
      * Launches a new marketing campaign.

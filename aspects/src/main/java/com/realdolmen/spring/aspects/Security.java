@@ -4,11 +4,11 @@ import com.realdolmen.spring.domain.Animal;
 
 import java.util.Objects;
 
-// TODO 1: Turn the security class into a Spring AOP aspect
+// TODO: Turn the security class into a Spring AOP aspect
 public class Security {
-    // TODO 2: Create an advice that is capable of preventing an animal from trying to call zoo.releaseAnimal()
-    // TODO 3: When any animal except Chimps try to escape, prevent it from happening (preventEscapeOf()
-    // TODO 4: When a Chimp escapes, we need to sound the alert by throwing an EscapedAnimalException
+    // TODO: Create an advice that is capable of preventing an animal from trying to call zoo.releaseAnimal()
+    // TODO: When any animal except Chimps try to escape, prevent it from happening (preventEscapeOf()
+    // TODO: When a Chimp escapes, we need to sound the alert by throwing an EscapedAnimalException
 
     /**
      * Prevents escaping of an animal.

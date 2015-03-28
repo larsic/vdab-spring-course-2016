@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @ComponentScan
-// TODO 1: Enable the Spring AOP Engine
+// TODO: Enable the Spring AOP Engine
 public class ApplicationConfiguration {
     @Bean
     public Zoo zoo() {
