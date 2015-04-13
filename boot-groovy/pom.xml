@@ -11,7 +11,7 @@
     <version>1.0</version>
 
     <!--
-        This pom is for maintaince only. It does not serve a purpose other then causing it to be detected by the
+        This pom is for maintenance only. It does not serve a purpose other then causing it to be detected by the
         IDE as a project
     -->
     <packaging>pom</packaging>

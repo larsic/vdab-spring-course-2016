@@ -13,7 +13,6 @@
 
     <modules>
         <module>introduction</module>
-        <module>wiring</module>
         <module>aspects</module>
         <module>boot-java</module>
         <module>boot-groovy</module>
