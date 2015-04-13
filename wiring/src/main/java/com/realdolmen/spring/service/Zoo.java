@@ -12,5 +12,5 @@ public interface Zoo {
     boolean accept(Visitor visitor);
     String getName();
     int countAnimals();
-
+    void feedAnimals();
 }
