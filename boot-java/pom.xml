@@ -7,7 +7,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.realdolmen.spring</groupId>
-    <artifactId>boot</artifactId>
+    <artifactId>boot-java</artifactId>
     <version>1.0</version>
 
     <!-- TODO: Setup this project as a Spring Boot Maven project using a parent -->
