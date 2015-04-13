@@ -18,6 +18,6 @@ public class FoodDistributionServiceImpl implements FoodDistributionService {
 
     @Override
     public void feedAnimalsByType(List<Animal> animals) {
-        animals.stream().forEach(x -> x.feed(foodRepository.findFoodForAnimalType(x)));
+        animals.stream().forEach(x -> x.feed(foodRepository.findFoodForAnimalType(x.getClass())));
     }
 }

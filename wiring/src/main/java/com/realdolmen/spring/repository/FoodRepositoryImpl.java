@@ -13,12 +13,12 @@ public class FoodRepositoryImpl implements FoodRepository {
     private Map<String, Food> feed = new HashMap<>();
 
     @Override
-    public void addFoodForAnimalType(Animal animal, Food food) {
-        feed.put(animal.getClass().getName(), food);
+    public void addFoodForAnimalType(Class<? extends Animal> c, Food food) {
+        feed.put(c.getName(), food);
     }
 
     @Override
-    public Food findFoodForAnimalType(Animal animal) {
-        return feed.get(animal.getClass().getName());
+    public Food findFoodForAnimalType(Class<? extends Animal> c) {
+        return feed.get(c.getName());
     }
 }

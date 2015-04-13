@@ -25,9 +25,9 @@ public class ZooConfig {
     @Bean
     public FoodRepository foodRepository() {
         FoodRepository foodRepository = new FoodRepositoryImpl();
-        foodRepository.addFoodForAnimalType(new Tiger("Tigers"), new MeatyFood("Red Antilope Meat"));
-        foodRepository.addFoodForAnimalType(new Bear("Bears"), new MeatyFood("Pink Salmon"));
-        foodRepository.addFoodForAnimalType(new Elephant("Elephants"), new VegiFood("Cabbage"));
+        foodRepository.addFoodForAnimalType(Tiger.class, new MeatyFood("Red Antilope Meat"));
+        foodRepository.addFoodForAnimalType(Bear.class, new MeatyFood("Pink Salmon"));
+        foodRepository.addFoodForAnimalType(Elephant.class, new VegiFood("Cabbage"));
         return foodRepository;
     }
 }
