@@ -66,7 +66,7 @@
                                 <div class="form-group">
                                     <label for="animalType">Animal type</label>
                                     <select name="type" id="animalType" class="form-control">
-                                        <option th:each="type : ${T(com.realdolmen.Animal.Type).values()}" th:value="${type.name()}" th:text="${type.name()}"></option>
+                                        <option th:each="type : ${T(com.realdolmen.spring.domain.Animal.Type).values()}" th:value="${type.name()}" th:text="${type.name()}"></option>
                                     </select>
                                 </div>
                             </div>
