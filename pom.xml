@@ -13,14 +13,15 @@
 
     <modules>
         <module>introduction</module>
-        <module>aspects</module>
         <module>wiring</module>
         <module>wiring2</module>
+        <module>aspects</module>
         <module>data-access-jdbc</module>
+        <module>data-access-jpa</module>
+        <module>data</module>
         <module>boot-java</module>
         <module>boot-groovy</module>
         <module>samples</module>
-        <module>data</module>
     </modules>
 
 </project>
