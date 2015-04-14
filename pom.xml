@@ -20,6 +20,7 @@
         <module>boot-java</module>
         <module>boot-groovy</module>
         <module>samples</module>
+        <module>data</module>
     </modules>
 
 </project>
