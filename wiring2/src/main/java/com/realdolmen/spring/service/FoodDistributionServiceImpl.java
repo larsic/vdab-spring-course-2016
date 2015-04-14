@@ -1,5 +1,6 @@
 package com.realdolmen.spring.service;
 
+import com.realdolmen.spring.annotations.Kibble;
 import com.realdolmen.spring.domain.Animal;
 import com.realdolmen.spring.repository.FoodRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,7 @@ import java.util.List;
 public class FoodDistributionServiceImpl implements FoodDistributionService {
 
     @Autowired
+    @Kibble
     private FoodRepository foodRepository;
 
     @Override
