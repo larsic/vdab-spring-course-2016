@@ -17,6 +17,7 @@
         <module>boot-java</module>
         <module>boot-groovy</module>
         <module>samples</module>
+        <module>wiring2</module>
     </modules>
 
 </project>
