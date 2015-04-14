@@ -3,6 +3,7 @@ package com.realdolmen.spring;
 import com.realdolmen.spring.service.Zoo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
 
 import javax.swing.*;
@@ -14,13 +15,7 @@ import java.util.Arrays;
 @SpringBootApplication
 public class ApplicationConfiguration {
     public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(ApplicationConfiguration.class);
-        app.setAdditionalProfiles("production");
-        ConfigurableApplicationContext context = app.run();
-
-        //set active profile with -Dspring.profiles.active=production
-        //ConfigurableApplicationContext context = SpringApplication.run(ApplicationConfiguration.class);
-
+        ConfigurableApplicationContext context = new SpringApplicationBuilder(ApplicationConfiguration.class).profiles("production").run();
         Zoo zoo = context.getBean(Zoo.class);
         System.out.println(zoo.getName());
         System.out.println("Nr. of Animals: " + zoo.countAnimals());
