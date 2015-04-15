@@ -11,9 +11,7 @@ public interface Zoo {
     void releaseAnimal(Animal animal);
     boolean accept(Visitor visitor);
     String getName();
-    int getMaxAnimalCount();
-    String getOwnerName();
-    double getTicketPrice();
+    // TODO Add more methods (getters) here
     int countAnimals();
     void feedAnimals();
 }

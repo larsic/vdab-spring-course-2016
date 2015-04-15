@@ -12,9 +12,9 @@ import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
  * Created by cda5732 on 14/04/2015.
  */
 @Configuration
-@PropertySource("classpath:test.properties")
-@Profile("test")
-@ComponentScan(basePackages = "com.realdolmen.spring")
+// TODO load test properties
+// TODO configure a profile
+// TODO use component scanning
 public class TestConfig {
     @Bean
     public Zoo zoo() {
@@ -25,17 +25,6 @@ public class TestConfig {
         return zoo;
     }
 
-    @Bean
-    public FoodRepository foodRepository() {
-        FoodRepository foodRepository = new FoodRepositoryImpl();
-        foodRepository.addFoodForAnimalType(Tiger.class, new MeatyFood("Red Antilope Meat"));
-        foodRepository.addFoodForAnimalType(Bear.class, new MeatyFood("Pink Salmon"));
-        foodRepository.addFoodForAnimalType(Elephant.class, new VegiFood("Cabbage"));
-        return foodRepository;
-    }
+   // TODO configure the properties loader
 
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer placeholderConfigurer() {
-        return new PropertySourcesPlaceholderConfigurer();
-    }
 }

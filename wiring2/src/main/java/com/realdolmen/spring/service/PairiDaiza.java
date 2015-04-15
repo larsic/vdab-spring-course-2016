@@ -1,11 +1,9 @@
 package com.realdolmen.spring.service;
 
-import com.realdolmen.spring.annotations.Kibble;
 import com.realdolmen.spring.domain.Animal;
 import com.realdolmen.spring.domain.Visitor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.validation.annotation.Validated;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,14 +12,11 @@ import java.util.List;
  * Created by cda5732 on 25/03/2015.
  */
 public class PairiDaiza implements Zoo {
-    @Value("${zoo.name}")
+
+    // TODO Add maxAnimalCount, ownerName and ticketPrice, and load from properties
+
     private String name;
-    @Value("${zoo.max.animal.count}")
-    private int maxAnimalCount;
-    @Value("${zoo.owner.name}")
-    private String ownerName;
-    @Value("${zoo.ticket.price}")
-    private double ticketPrice;
+
 
     private List<Animal> animals = new ArrayList<>();
 
@@ -54,30 +49,6 @@ public class PairiDaiza implements Zoo {
     @Override
     public String getName() {
         return name;
-    }
-
-    public int getMaxAnimalCount() {
-        return maxAnimalCount;
-    }
-
-    public void setMaxAnimalCount(int maxAnimalCount) {
-        this.maxAnimalCount = maxAnimalCount;
-    }
-
-    public String getOwnerName() {
-        return ownerName;
-    }
-
-    public void setOwnerName(String ownerName) {
-        this.ownerName = ownerName;
-    }
-
-    public double getTicketPrice() {
-        return ticketPrice;
-    }
-
-    public void setTicketPrice(double ticketPrice) {
-        this.ticketPrice = ticketPrice;
     }
 
     @Override

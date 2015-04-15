@@ -1,6 +1,8 @@
 package com.realdolmen.spring.config;
 
-import com.realdolmen.spring.domain.*;
+import com.realdolmen.spring.domain.Bear;
+import com.realdolmen.spring.domain.Elephant;
+import com.realdolmen.spring.domain.Tiger;
 import com.realdolmen.spring.service.PairiDaiza;
 import com.realdolmen.spring.service.Zoo;
 import org.springframework.context.annotation.Bean;

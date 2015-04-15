@@ -17,11 +17,12 @@ public class ApplicationConfiguration {
     public static void main(String[] args) {
         ConfigurableApplicationContext context = new SpringApplicationBuilder(ApplicationConfiguration.class).profiles("production").run();
         Zoo zoo = context.getBean(Zoo.class);
-        System.out.println(zoo.getName());
+        // TODO make sure the following print out values from properties files
+        System.out.println("Zoo name: " + zoo.getName());
         System.out.println("Nr. of Animals: " + zoo.countAnimals());
-        System.out.println("Max Animals: " + zoo.getMaxAnimalCount());
-        System.out.println("Owner: " + zoo.getOwnerName());
-        System.out.println("Ticket Price: " + zoo.getTicketPrice());
+        System.out.println("Max Animals: ");
+        System.out.println("Owner: ");
+        System.out.println("Ticket Price: ");
         zoo.feedAnimals();
     }
 }
