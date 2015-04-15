@@ -1,8 +1,6 @@
 package com.realdolmen.spring.config;
 
 import com.realdolmen.spring.domain.*;
-import com.realdolmen.spring.repository.FoodRepository;
-import com.realdolmen.spring.repository.FoodRepositoryImpl;
 import com.realdolmen.spring.service.PairiDaiza;
 import com.realdolmen.spring.service.Zoo;
 import org.springframework.context.annotation.Bean;
@@ -21,13 +19,5 @@ public class ZooConfig {
         zoo.addAnimal(new Bear("Brown Bear"));
         return zoo;
     }
-
-    @Bean
-    public FoodRepository foodRepository() {
-        FoodRepository foodRepository = new FoodRepositoryImpl();
-        foodRepository.addFoodForAnimalType(Tiger.class, new MeatyFood("Red Antilope Meat"));
-        foodRepository.addFoodForAnimalType(Bear.class, new MeatyFood("Pink Salmon"));
-        foodRepository.addFoodForAnimalType(Elephant.class, new VegiFood("Cabbage"));
-        return foodRepository;
-    }
+    // TODO Configure the FoodRepository
 }

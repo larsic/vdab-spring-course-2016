@@ -18,7 +18,5 @@ public abstract class Animal {
         this.name = name;
     }
 
-    public void feed(Food food) {
-        System.out.println("Feeding " + getName() + " " + food.getName());
-    }
+   // TODO Feed the Animal some Food
 }

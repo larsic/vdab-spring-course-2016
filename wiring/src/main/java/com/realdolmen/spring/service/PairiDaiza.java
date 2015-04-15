@@ -14,8 +14,7 @@ public class PairiDaiza implements Zoo {
     private String name;
     private List<Animal> animals = new ArrayList<>();
 
-    @Autowired
-    private FoodDistributionService foodDistributionService;
+   // TODO fetch the FoodDistributionService
 
     public PairiDaiza(String name) {
         this.name = name;
@@ -49,6 +48,7 @@ public class PairiDaiza implements Zoo {
 
     @Override
     public void feedAnimals() {
-        foodDistributionService.feedAnimalsByType(animals);
+        //TODO Call the FoodDistributionService
+
     }
 }
