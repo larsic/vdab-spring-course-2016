@@ -20,9 +20,9 @@ import javax.sql.DataSource;
 import java.util.Properties;
 
 @ComponentScan
-@EnableTransactionManagement
 @Configuration
 @EnableJpaRepositories
+// TODO: enable transaction management
 public class BankConfig {
     @Bean
     public DataSource dataSource() {
@@ -58,8 +58,5 @@ public class BankConfig {
         return properties;
     }
 
-    @Bean
-    public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
-        return new JpaTransactionManager(entityManagerFactory);
-    }
+    // TODO: add a transaction manager bean for JPA.
 }

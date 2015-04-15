@@ -8,10 +8,18 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Service
-@Transactional
+// TODO: make sure our bank is resilient to errors, by making it transactional!
 public class Bank {
     @Autowired
     private AccountRepository repository;
+    private boolean buggy = false;
+
+    public void maintenance() {
+        System.out.println("Dismantling some parts...");
+        System.out.println("Putting some parts back together...");
+        buggy = true;
+        System.out.println("Count left-over parts: 1. Acceptable: yes.");
+    }
 
     public Account openAccount(Account account) {
         System.out.println("Opening account " + account.getName() + " with balance €" + account.getBalance());
@@ -25,7 +33,7 @@ public class Bank {
         from.setBalance(from.getBalance().subtract(amount));
         repository.save(from);
 
-        Bug.causeMischief("i like it");
+        if(buggy) Bug.causeMischief("i like it");
 
         to.setBalance(to.getBalance().add(amount));
         return repository.save(to);
@@ -41,6 +49,6 @@ public class Bank {
         List<Account> accounts = repository.findAll();
         accounts.forEach(Account::print);
         BigDecimal total = accounts.stream().map(Account::getBalance).reduce(BigDecimal.ZERO, BigDecimal::add);
-        System.out.println("Total money: " + total);
+        System.out.println("Total money: €" + total);
     }
 }

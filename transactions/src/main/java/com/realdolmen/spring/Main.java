@@ -11,6 +11,8 @@ public class Main {
     public static void main(String[] args) {
         Bank bank = SpringApplication.run(BankConfig.class, args).getBean(Bank.class);
 
+        // TODO: Do some maintenance for our bank: after all, we need to make sure everything keeps running smoothly, right?
+
         System.out.println();
 
         System.out.println("Opening accounts");
