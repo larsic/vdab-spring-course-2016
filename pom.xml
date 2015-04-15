@@ -19,6 +19,7 @@
         <module>data-access-jdbc</module>
         <module>data-access-jpa</module>
         <module>data</module>
+        <module>transactions</module>
         <module>boot-java</module>
         <module>boot-groovy</module>
         <module>samples</module>
