@@ -20,42 +20,15 @@ import javax.sql.DataSource;
 @EnableTransactionManagement
 public class ZooConfig {
     @Bean
-    @Profile("production")
-    public DataSource dataSource() {
-        BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setUrl("jdbc:mysql://localhost:3306/zoo");
-        dataSource.setUsername("root");
-        dataSource.setPassword("");
-        return dataSource;
-    }
-
-    @Bean
-    @Profile("production")
-    public Database database() {
-        return Database.MYSQL;
-    }
-
-
-    @Bean
-    public JpaVendorAdapter jpaVendorAdapter(Database database) {
-        HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
-        database = Database.MYSQL;
-        adapter.setDatabase(database);
-        adapter.setShowSql(true);
-        return adapter;
-    }
-
-    @Bean
-    public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean(DataSource dataSource, JpaVendorAdapter jpaVendorAdapter) {
-        LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
-        entityManagerFactoryBean.setDataSource(dataSource);
-        entityManagerFactoryBean.setJpaVendorAdapter(jpaVendorAdapter);
-        entityManagerFactoryBean.setPackagesToScan("com.realdolmen");
-        return entityManagerFactoryBean;
-    }
-
-    @Bean
     public PlatformTransactionManager transactionManager(EntityManagerFactory entityManagerFactory) {
         return new JpaTransactionManager(entityManagerFactory);
     }
+
+    // TODO: Configure a DataSource for MySQL in the production profile (BasicDataSource)
+
+    // TODO: configure an embedded DataSource for H2 in the test profile
+
+    // TODO: Configure an EntityManagerFactory bean for use with Hibernate
+
+    // TODO: Make sure your EntityManagerFactoryBean is set up for using dialect H2 in test and dialect MySQL in production
 }

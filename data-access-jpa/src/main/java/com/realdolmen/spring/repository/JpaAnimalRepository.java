@@ -1,41 +1,19 @@
 package com.realdolmen.spring.repository;
 
-import com.realdolmen.spring.domain.Animal;
-import org.springframework.stereotype.Repository;
+public class JpaAnimalRepository {
+    // TODO: create a transactional repository bean from this class
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
-import java.util.List;
+    // TODO: inject a persistence context
 
-@Repository
-@Transactional
-public class JpaAnimalRepository implements AnimalRepository {
-    @PersistenceContext
-    private EntityManager entityManager;
+    // TODO: implement AnimalRepository
 
-    @Override
-    public void create(Animal animal) {
-        entityManager.persist(animal);
-    }
+    // TODO: implement findById()
 
-    @Override
-    public Animal findById(int id) {
-        return entityManager.find(Animal.class, id);
-    }
+    // TODO: implement findAll()
 
-    @Override
-    public List<Animal> findAll() {
-        return entityManager.createQuery("select a from Animal a", Animal.class).getResultList();
-    }
+    // TODO: implement create()
 
-    @Override
-    public void update(Animal animal) {
-        entityManager.merge(animal);
-    }
+    // TODO: implement update()
 
-    @Override
-    public void remove(Animal animal) {
-        entityManager.remove(animal);
-    }
+    // TODO: implement delete()
 }

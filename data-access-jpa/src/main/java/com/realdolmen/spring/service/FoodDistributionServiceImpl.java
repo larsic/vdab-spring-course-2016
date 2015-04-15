@@ -1,6 +1,5 @@
 package com.realdolmen.spring.service;
 
-import com.realdolmen.spring.domain.Animal;
 import com.realdolmen.spring.domain.Food;
 import com.realdolmen.spring.repository.AnimalRepository;
 import com.realdolmen.spring.repository.FoodRepository;
@@ -8,18 +7,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class FoodDistributionServiceImpl implements FoodDistributionService {
 
-    @Autowired
+    @Autowired(required = false)
     private FoodRepository foodRepository;
 
-    @Autowired
+    @Autowired(required = false)
     private AnimalRepository animalRepository;
 
     @Override
     public void feedAllAnimal() {
+        Objects.requireNonNull(animalRepository, "Animal repository must exist");
+        Objects.requireNonNull(foodRepository, "Food repository must exist");
+
         animalRepository.findAll().stream().forEach(animal -> {
             List<Food> allFoodsForAnimal = foodRepository.findFoodForAnimalType(animal.getType());
             if(allFoodsForAnimal != null && allFoodsForAnimal.isEmpty()) {

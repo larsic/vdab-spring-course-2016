@@ -1,39 +1,13 @@
 package com.realdolmen.spring.repository;
 
-import com.realdolmen.spring.domain.Animal;
-import com.realdolmen.spring.domain.Food;
-import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
+public class JpaFoodRepository {
+    // TODO: Create a transactional repository bean implementing FoodRepository
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import java.util.List;
+    // TODO: implement findFoodById()
 
-@Repository
-@Transactional
-public class JpaFoodRepository implements FoodRepository {
-    @PersistenceContext
-    private EntityManager entityManager;
+    // TODO: implement findAllFood()
 
-    @Override
-    public Food findFoodById(int id) {
-        return entityManager.find(Food.class, id);
-    }
+    // TODO: implement findFoodForAnimalType()
 
-    @Override
-    public List<Food> findAllFood() {
-        return entityManager.createQuery("select f from Food f").getResultList();
-    }
-
-    @Override
-    public List<Food> findFoodForAnimalType(Animal.Type type) {
-        return entityManager.createQuery("select d.food from DietEntry d where d.animalType = :animalType order by d.food.name", Food.class)
-            .setParameter("animalType", Animal.Type.bear)
-            .getResultList();
-    }
-
-    @Override
-    public void removeFood(Food food) {
-        entityManager.remove(food);
-    }
+    // TODO: implement removeFood()
 }
