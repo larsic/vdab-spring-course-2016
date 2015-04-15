@@ -8,10 +8,15 @@ import com.realdolmen.spring.domain.Visitor;
  */
 public interface Zoo {
     void addAnimal(Animal animal);
+
     void releaseAnimal(Animal animal);
+
     boolean accept(Visitor visitor);
+
     String getName();
+
     // TODO Add more methods (getters) here
     int countAnimals();
+
     void feedAnimals();
 }
