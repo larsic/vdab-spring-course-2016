@@ -23,6 +23,7 @@
         <module>boot-java</module>
         <module>boot-groovy</module>
         <module>samples</module>
+        <module>mvc</module>
     </modules>
 
 </project>
