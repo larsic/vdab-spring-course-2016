@@ -16,23 +16,17 @@ import org.springframework.web.servlet.view.InternalResourceView;
 import static org.mockito.Mockito.mock;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.standaloneSetup;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = BlogApplication.class)
-@ActiveProfiles("test")
-@WebAppConfiguration
+// TODO: Configure this as a Spring test for BlogApplication and "test" profile enabled
 public abstract class AbstractControllerTest {
     protected MockMvc mvc;
+
+    protected AuthorRepository repository; // This needs to be a mock! Not the real one!
 
     @Autowired
     protected WebApplicationContext context;
 
-    protected AuthorRepository repository = mock(AuthorRepository.class);
+    // TODO: Create a field for a Mock of AuthorRepository
 
-    @Before
-    public void init() throws Exception {
-        RegistrationController registrationController = new RegistrationController();
-        AuthorController authorController = new AuthorController();
-        registrationController.authorRepository = authorController.authorRepository = repository;
-        mvc = standaloneSetup(registrationController, authorController).setSingleView(new InternalResourceView("/WEB-INF/views/index.html")).build();
-    }
+    // TODO: Setup a reuable MockMvc for AuthorController and RegistrationController
+    // TODO: Make sure both controllers use the AuthorRepositoryt mock
 }

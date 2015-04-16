@@ -1,6 +1,7 @@
 package com.realdolmen.spring.blog.controllers;
 
 import com.realdolmen.spring.blog.BlogApplication;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,26 +18,18 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.setup.MockMvcBuilders.webAppContextSetup;
 
-@RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = BlogApplication.class)
-@ActiveProfiles("test")
-@WebAppConfiguration
+// TODO: Make sure JUnit runt with Spring's class runner
+// TODO: Load context from BlogApplication with "test" profile active
+// TODO: Configure the testing framework to use a WebApplicationContext
 public class HomeControllerTest {
     @Autowired
     private WebApplicationContext context;
 
-    private MockMvc mvc;
-
-    @Before
-    public void setUp() throws Exception {
-        mvc = webAppContextSetup(context).build();
-    }
+    // TODO: Configure a MockMVC to use in the unit test
 
     @Test
     public void homeControllerReturnsIndexPage() throws Exception {
-        mvc.perform(get("/index"))
-            .andExpect(status().isOk())
-            .andExpect(view().name("index"))
-            .andExpect(content().string(containsString("This is the homepage of the RealDolmen Blog.")));
+        // TODO implement this unit test
+        Assert.fail("todo");
     }
 }

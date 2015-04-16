@@ -1,6 +1,7 @@
 package com.realdolmen.spring.blog.controllers;
 
 import com.realdolmen.spring.blog.domain.Author;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -14,9 +15,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class AuthorControllerTest extends AbstractControllerTest {
     @Test
     public void authorsDisplaysList() throws Exception {
-        when(repository.findAll()).thenReturn(dummyAuthors());
-        mvc.perform(get("/authors")).andExpect(model().attributeExists("authorList"));
-        mvc.perform(get("/authors")).andExpect(model().attribute("authorList", dummyAuthors()));
+        // TODO: Implement a unit test to verify that /authors puts a list of authors on the model
+        Assert.fail("todo");
     }
 
     private List<Author> dummyAuthors() {
@@ -28,8 +28,6 @@ public class AuthorControllerTest extends AbstractControllerTest {
 
     @Test
     public void removePropagatesToRepositoryDelete() throws Exception {
-        long id = 1L;
-        mvc.perform(get("/authors/{id}/remove", id));
-        verify(repository).delete(id);
+        // TODO: Implement a unit test to verify that /authors/1/remove removes the author from the repository
     }
 }
