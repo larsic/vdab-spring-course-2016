@@ -20,6 +20,7 @@
         <module>data-access-jpa</module>
         <module>data</module>
         <module>transactions</module>
+        <module>test</module>
         <module>boot-java</module>
         <module>boot-groovy</module>
         <module>samples</module>
