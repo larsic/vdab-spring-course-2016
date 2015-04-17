@@ -12,6 +12,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 @SpringBootApplication
 public class ApplicationConfiguration {
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = new SpringApplicationBuilder(ApplicationConfiguration.class).profiles("production").run();
+        new SpringApplicationBuilder(ApplicationConfiguration.class).profiles("production").run();
     }
 }
