@@ -7,6 +7,8 @@ import com.realdolmen.spring.service.PairiDaiza;
 import com.realdolmen.spring.service.Zoo;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.PropertySource;
 
 
 /**
@@ -14,7 +16,10 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration
 // TODO Load properties for the zoo
+@PropertySource("classpath:/com/realdolmen/spring/Zooimpl.properties")
 // TODO Add a profile
+@Profile("lars-prod")
+
 public class ZooConfig {
 
     @Bean
@@ -28,6 +33,7 @@ public class ZooConfig {
 
     @Bean
     // TODO this is the Non-Kibble repository
+
     public FoodRepository foodRepository() {
         FoodRepository foodRepository = new FoodRepositoryImpl();
         foodRepository.addFoodForAnimalType(Tiger.class, new MeatyFood("Red Antilope Meat"));

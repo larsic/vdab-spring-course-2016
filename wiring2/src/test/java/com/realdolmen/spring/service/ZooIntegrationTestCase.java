@@ -10,6 +10,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
 /**
@@ -17,6 +18,7 @@ import static org.junit.Assert.assertThat;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = TestConfig.class)
+@ActiveProfiles("lars-test")
 // TODO Select the right profile
 public class ZooIntegrationTestCase {
 
@@ -28,4 +30,17 @@ public class ZooIntegrationTestCase {
         assertThat(zoo.getName(), is("Antwerp Zoo"));
         // TODO assert the Zoo values come from the test properties
     }
+
+    @Test
+    public void shouldHavePrice3_5() {
+        assertEquals(3.5, zoo.getZooTicketPrice(), 0.001);
+    }
+
+    @Test
+    public void shouldHaveOwnerNameAsterixTest() {
+        assertEquals("Asterixtest", zoo.getZooOwnerName());
+    }
+
+    @Test
+    public void shouldHaveZooName() { assertEquals("Pantheontest", zoo.getZooName()); }
 }

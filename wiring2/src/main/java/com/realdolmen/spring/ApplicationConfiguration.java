@@ -11,7 +11,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 @SpringBootApplication
 public class ApplicationConfiguration {
     public static void main(String[] args) {
-        ConfigurableApplicationContext context = new SpringApplicationBuilder(ApplicationConfiguration.class).profiles("production").run();
+        ConfigurableApplicationContext context = new SpringApplicationBuilder(ApplicationConfiguration.class).profiles("lars-prod").run();
         Zoo zoo = context.getBean(Zoo.class);
         // TODO make sure the following print out values from properties files
         System.out.println("Zoo name: " + zoo.getName());

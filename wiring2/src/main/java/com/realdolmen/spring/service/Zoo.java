@@ -2,6 +2,7 @@ package com.realdolmen.spring.service;
 
 import com.realdolmen.spring.domain.Animal;
 import com.realdolmen.spring.domain.Visitor;
+import org.springframework.context.annotation.Configuration;
 
 /**
  * Created by cda5732 on 25/03/2015.
@@ -16,6 +17,13 @@ public interface Zoo {
     String getName();
 
     // TODO Add more methods (getters) here
+    double getZooTicketPrice();
+
+    String getZooOwnerName();
+
+    String getZooName();
+
+
     int countAnimals();
 
     void feedAnimals();

@@ -1,10 +1,13 @@
 package com.realdolmen.spring.domain;
 
+import com.realdolmen.spring.service.Zoo;
+
 /**
- * Created by cda5732 on 25/03/2015.
+ * Created by brandonstark on 26/08/16.
  */
 public abstract class Animal {
-    private String name;
+
+    String name;
 
     public Animal(String name) {
         this.name = name;
@@ -17,12 +20,4 @@ public abstract class Animal {
     public void setName(String name) {
         this.name = name;
     }
-
-
-
-    // TODO Feed the Animal some Food
-
-    public void feed(Food fd){
-        System.out.println("Feeding " + getName() + " " + fd);
-    };
 }

@@ -6,15 +6,18 @@ import com.realdolmen.spring.repository.FoodRepositoryImpl;
 import com.realdolmen.spring.service.PairiDaiza;
 import com.realdolmen.spring.service.Zoo;
 import org.springframework.context.annotation.*;
-import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 
 /**
  * Created by cda5732 on 14/04/2015.
  */
 @Configuration
 // TODO load test properties
+@PropertySource("classpath:/Zooimpl-test.properties")
 // TODO configure a profile
+@Profile("lars-test")
+
 // TODO use component scanning
+@ComponentScan(basePackages = "com.realdolmen.spring")
 public class TestConfig {
     @Bean
     public Zoo zoo() {
@@ -25,6 +28,14 @@ public class TestConfig {
         return zoo;
     }
 
+    @Bean
+    public FoodRepository repo() {
+        FoodRepository r = new FoodRepositoryImpl();
+        r.addFoodForAnimalType(Tiger.class, new Kibble());
+        return r;
+    }
+
    // TODO configure the properties loader
+
 
 }

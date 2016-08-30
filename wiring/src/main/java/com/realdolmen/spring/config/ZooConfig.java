@@ -1,10 +1,7 @@
 package com.realdolmen.spring.config;
 
-import com.realdolmen.spring.domain.Bear;
-import com.realdolmen.spring.domain.Elephant;
-import com.realdolmen.spring.domain.Tiger;
-import com.realdolmen.spring.service.PairiDaiza;
-import com.realdolmen.spring.service.Zoo;
+import com.realdolmen.spring.domain.*;
+import com.realdolmen.spring.service.*;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -22,4 +19,15 @@ public class ZooConfig {
         return zoo;
     }
     // TODO Configure the FoodRepository
+
+    @Bean
+    public FoodRepository repo() {
+        FoodRepository r = new AnimalDietitian();
+        r.addFoodForAnimalType(Tiger.class, new MeatyFood());
+        r.addFoodForAnimalType(Bear.class, new MeatyFood());
+        r.addFoodForAnimalType(Elephant.class, new VegiFood());
+        return r;
+    }
+
+
 }
