@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import sun.applet.Main;
 
 /**
  * Created by brandonstark on 26/08/16.
@@ -11,7 +12,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 @SpringBootApplication
 public class Runner {
     public static void main(String[] args) {
-        ApplicationContext ac = SpringApplication.run(MyConfiguration.class);
+        ApplicationContext ac = SpringApplication.run(Runner.class);
 
         Knight k = ac.getBean(Knight.class);
         k.embarkOnQuest();
