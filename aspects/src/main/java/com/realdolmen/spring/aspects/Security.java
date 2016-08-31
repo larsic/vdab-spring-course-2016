@@ -1,9 +1,12 @@
 package com.realdolmen.spring.aspects;
 
 import com.realdolmen.spring.domain.Animal;
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.stereotype.Component;
 
 import java.util.Objects;
-
+@Component
+@Aspect
 // TODO: Turn the security class into a Spring AOP aspect
 public class Security {
     // TODO: Create an advice that is capable of preventing an animal from trying to call zoo.releaseAnimal()

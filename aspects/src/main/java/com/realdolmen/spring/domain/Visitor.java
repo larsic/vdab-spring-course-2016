@@ -1,5 +1,11 @@
 package com.realdolmen.spring.domain;
 
+import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+
+
 public class Visitor {
     private String name;
     private boolean grumpy;
@@ -24,6 +30,7 @@ public class Visitor {
     public void orderMeal(Restaurant restaurant) {
         restaurant.serveMeal(this);
     }
+
 
     public void visit(Zoo zoo) {
         zoo.accept(this);

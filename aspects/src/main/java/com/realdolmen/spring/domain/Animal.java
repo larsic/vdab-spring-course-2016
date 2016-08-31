@@ -1,5 +1,8 @@
 package com.realdolmen.spring.domain;
 
+import org.aspectj.lang.annotation.Aspect;
+import org.springframework.stereotype.Component;
+
 import java.util.Objects;
 
 public abstract class Animal {
