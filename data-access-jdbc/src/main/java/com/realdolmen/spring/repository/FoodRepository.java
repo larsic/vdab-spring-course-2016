@@ -13,4 +13,5 @@ public interface FoodRepository {
     List<Food> findFoodForAnimalType(Animal.Type type);
     void addFoodForAnimalType(Animal.Type animalType, Food food);
     void removeFood(Food food);
+
 }
